@@ -1,6 +1,7 @@
 #!/bin/sh
-root_password="password2"
-lan_ip_address="192.168.9.1"
+
+# root_password="password2"
+# lan_ip_address="192.168.9.1"
 
 # log potential errors
 exec >/tmp/setup.log 2>&1
