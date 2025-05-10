@@ -1,3 +1,4 @@
+
 name: build-x86-64-immortalwrt-24.10.1
 
 on:
@@ -11,11 +12,21 @@ on:
         description: |
           是否编译 Docker 插件
         required: true
-        default: 'yes'
+        default: 'no'
         type: choice
         options:
           - 'yes'
           - 'no'
+      root_password: 
+        description: |
+          ROOT 密码
+        required: true
+        default: 'password2'
+      lan_ip_address: 
+        description: |
+          lan 口 ip
+        required: true
+        default: '192.168.9.1'
       enable_pppoe:
         description: "是否配置PPPoE拨号信息?"
         required: true
@@ -92,6 +103,12 @@ jobs:
             echo -e "NO docker"
           fi
 
+      - name: Update info
+        run: |
+          lan_ip_address="ip ${{ github.event.inputs.lan_ip_address }}"
+          password="password ${{ github.event.inputs.root_password }}"
+          echo -e "\n $lan_ip_address \n $password" >> ${{ github.workspace }}/info.md
+
       - name: Upload ImmortWrt as release assets
         uses: softprops/action-gh-release@v2.2.1
         with:
@@ -103,4 +120,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
