@@ -103,7 +103,9 @@ jobs:
       
       - name: Get current date for tag
         id: date_tag
-        run: echo "BUILD_DATE=$(date +'%Y%m%d%H%M')" >> $GITHUB_ENV
+        run: |
+          export TZ='Asia/Shanghai'
+          echo "BUILD_DATE=$(date +'%Y%m%d%H%M')" >> $GITHUB_ENV
 
       - name: Upload ImmortWrt as release assets
         uses: softprops/action-gh-release@v2.2.1
