@@ -66,8 +66,3 @@ CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-ramfree-zh-cn"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-zerotier-zh-cn"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-autoreboot-zh-cn"
 CUSTOM_PACKAGES="$CUSTOM_PACKAGES coremark"
-
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-app-openclash"
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-homeproxy-zh-cn"
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-samba4-zh-cn"
-CUSTOM_PACKAGES="$CUSTOM_PACKAGES -luci-i18n-diskman-zh-cn"
